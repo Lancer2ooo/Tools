@@ -12,10 +12,12 @@
         android:layout_height="match_parent"/>
 
     <LinearLayout
+        android:id="@+id/top_clock"
         android:orientation="vertical"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_marginHorizontal="20dp"
         android:layout_height="wrap_content">
         <TextClock
             android:id="@+id/timeText"
@@ -40,5 +42,239 @@
             android:textSize="16sp"/>
     </LinearLayout>
 
+    <ScrollView
+        android:layout_marginHorizontal="20dp"
+        android:layout_marginTop="20dp"
+        android:layout_below="@+id/top_clock"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/bt_sum"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+                <Button
+                    android:id="@+id/bt_sum2"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+                <Button
+                    android:id="@+id/bt_sum3"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/bt_sum5"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+                <Button
+                    android:id="@+id/bt_sum6"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+                <Button
+                    android:id="@+id/bt_sum7"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/bt_sum8"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+                <Button
+                    android:id="@+id/bt_sum9"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+                <Button
+                    android:id="@+id/bt_sum0"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/bt_sum11"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+                <Button
+                    android:id="@+id/bt_sum12"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+                <Button
+                    android:id="@+id/bt_sum13"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <Button
+                    android:id="@+id/bt_sum14"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+                <Button
+                    android:id="@+id/bt_sum15"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+                <Button
+                    android:id="@+id/bt_sum16"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:textSize="15dp"
+                    android:textColor="#000000"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:background="#00ffffff"
+                    android:drawablePadding="15dp"
+                    android:text="计算器"/>
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
 </RelativeLayout>
