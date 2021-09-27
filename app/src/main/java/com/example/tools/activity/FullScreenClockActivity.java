@@ -1,4 +1,4 @@
-package com.example.tools;
+package com.example.tools.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -7,11 +7,11 @@ import android.util.Log;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.ImageView;
-import android.widget.TextClock;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
-import com.bumptech.glide.request.RequestOptions;
+import com.example.tools.R;
+import com.example.tools.widget.BlurTransformation;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -23,9 +23,7 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
-import jp.wasabeef.glide.transformations.BlurTransformation;
-
-public class MainActivity extends AppCompatActivity {
+public class FullScreenClockActivity extends AppCompatActivity {
 
     ImageView imageView;
     @Override
@@ -36,10 +34,9 @@ public class MainActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_full_screen_clock);
 
-
-
-        imageView = findViewById(R.id.back_img);
+        imageView = findViewById(R.id.fullscreen_back_img);
         sendRequestWithHttpURLConnection();
     }
 
@@ -110,18 +107,16 @@ public class MainActivity extends AppCompatActivity {
 
                 //毛玻璃效果（内存溢出bug）
                 MultiTransformation multiTransformation = new MultiTransformation(
-                        new BlurTransformation(MainActivity.this,25)
+                        new BlurTransformation(FullScreenClockActivity.this,25)
                 );
 
                 // 在这里进行UI操作，将结果显示到界面上
-                Glide.with(MainActivity.this)
+                Glide.with(FullScreenClockActivity.this)
                         .load(response)
-                        .centerCrop()
                         .dontAnimate()
+                        .transform(multiTransformation)
                         .into(imageView);
             }
         });
     }
-
-
 }

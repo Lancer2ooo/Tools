@@ -4,23 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.MainActivity">
+    tools:context=".activity.FullScreenClockActivity"
+    >
 
     <ImageView
-        android:id="@+id/back_img"
+        android:id="@+id/fullscreen_back_img"
         android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 
     <LinearLayout
-        android:id="@+id/top_clock"
         android:orientation="vertical"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
+        android:layout_centerInParent="true"
         android:layout_width="match_parent"
-        android:layout_marginHorizontal="20dp"
-        android:layout_height="wrap_content"
-        android:background="#4DC1C1C1">
+        android:layout_height="wrap_content">
 
         <TextClock
             android:id="@+id/timeText"
@@ -31,7 +28,7 @@
             android:format24Hour="HH:mm"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="40sp"
+            android:textSize="80sp"
             android:textStyle="bold"
             android:layout_marginTop="20dp"/>
         <TextClock
@@ -43,35 +40,8 @@
             android:format24Hour="yyyy/MM/dd E"
             android:gravity="center"
             android:textColor="@color/white"
-            android:textSize="16sp"
+            android:textSize="32sp"
             android:layout_marginBottom="20dp"/>
     </LinearLayout>
 
-    <ScrollView
-        android:layout_marginHorizontal="20dp"
-        android:layout_marginTop="80dp"
-        android:layout_below="@+id/top_clock"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content">
-
-            <Button
-                android:id="@+id/calculator"
-                android:background="@drawable/ic_calculator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-            <Button
-                android:id="@+id/calculator2"
-                android:layout_marginTop="1000dp"
-                android:background="@drawable/ic_calculator"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"/>
-
-        </RelativeLayout>
-
-    </ScrollView>
 </RelativeLayout>
