@@ -22,7 +22,7 @@ import jp.wasabeef.glide.transformations.internal.RSBlur;
 /**
  * author : Lancer
  * e-mail : lancer2ooo@qq.com
- * date   : 2021/9/2710:29
+ * date   : 2020/9/27
  * desc   :
  * version: 1.0
  */

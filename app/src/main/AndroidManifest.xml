@@ -14,14 +14,13 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tools">
-        <meta-data
-            android:name="android.max_aspect"
-            android:value="2.4" />
-        <meta-data android:name="android.notch_support" android:value="true"/>
         <activity android:name=".activity.FullScreenClockActivity"
-            android:screenOrientation="landscape">
+            android:screenOrientation="landscape"
+            android:theme="@style/ImageTranslucentTheme"
+            >
         </activity>
-        <activity android:name=".activity.MainActivity">
+        <activity android:name=".activity.MainActivity"
+            android:theme="@style/ImageTranslucentTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

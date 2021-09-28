@@ -1,16 +1,24 @@
 package com.example.tools.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.view.WindowInsetsControllerCompat;
 
+import android.app.Activity;
 import android.content.Intent;
+import android.content.pm.ApplicationInfo;
+import android.content.pm.PackageManager;
+import android.graphics.Color;
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.Window;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
@@ -26,20 +34,43 @@ import java.io.InputStream;
 import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+import java.util.Timer;
+import java.util.TimerTask;
 
+/**
+ * author : Lancer
+ * e-mail : lancer2ooo@qq.com
+ * date   : 2021/9/27
+ * desc   :
+ * version: 1.0
+ */
 
 public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
     LinearLayout linearLayout;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //设置应用全屏显示 ^^
+        //设置应用全屏显示
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
+
+//        //设置应用全屏显示 沉浸式任务栏
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
+//            WindowInsetsController insetsController = getWindow().getInsetsController();
+//            if (insetsController != null) {
+//                getWindow().setStatusBarColor(Color.TRANSPARENT);
+//            }
+//        } else {
+//            getWindow().setFlags(
+//                    WindowManager.LayoutParams.FLAG_FULLSCREEN,
+//                    WindowManager.LayoutParams.FLAG_FULLSCREEN
+//            );
+//        }
 
         imageView = findViewById(R.id.back_img);
         sendRequestWithHttpURLConnection();
@@ -122,7 +153,7 @@ public class MainActivity extends AppCompatActivity {
 
                 //毛玻璃效果（内存溢出bug）
                 MultiTransformation multiTransformation = new MultiTransformation(
-                        new BlurTransformation(MainActivity.this,25)
+                        new BlurTransformation(MainActivity.this,10)
                 );
 
                 // 在这里进行UI操作，将结果显示到界面上

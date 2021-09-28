@@ -2,9 +2,12 @@ package com.example.tools.activity;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.os.Build;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.Window;
+import android.view.WindowInsets;
+import android.view.WindowInsetsController;
 import android.view.WindowManager;
 import android.widget.ImageView;
 
@@ -23,19 +26,26 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
 
+
+/**
+ * author : Lancer
+ * e-mail : lancer2ooo@qq.com
+ * date   : 2020/9/27
+ * desc   :
+ * version: 1.0
+ */
+
 public class FullScreenClockActivity extends AppCompatActivity {
 
     ImageView imageView;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        //设置应用全屏显示 ^^
+        //设置应用全屏显示
         this.requestWindowFeature(Window.FEATURE_NO_TITLE);
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        setContentView(R.layout.activity_main);
         setContentView(R.layout.activity_full_screen_clock);
-
         imageView = findViewById(R.id.fullscreen_back_img);
         sendRequestWithHttpURLConnection();
     }
@@ -105,9 +115,9 @@ public class FullScreenClockActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                //毛玻璃效果（内存溢出bug）
+                //毛玻璃效果
                 MultiTransformation multiTransformation = new MultiTransformation(
-                        new BlurTransformation(FullScreenClockActivity.this,25)
+                        new BlurTransformation(FullScreenClockActivity.this,10)
                 );
 
                 // 在这里进行UI操作，将结果显示到界面上
