@@ -68,10 +68,42 @@
 
                 <Button
                     android:id="@+id/calculator"
-                    android:background="@drawable/ic_calculator"
                     android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"/>
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:background="#00FFFFFF"
+                    android:drawableTop="@drawable/ic_calculator"
+                    android:layout_marginVertical="10dp"
+                    android:text="计算器"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    />
 
+                <Button
+                    android:id="@+id/color"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerHorizontal="true"
+                    android:drawableTop="@drawable/ic_color"
+                    android:layout_marginVertical="10dp"
+                    android:background="#00FFFFFF"
+                    android:text="颜色转换"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    />
+
+                <Button
+                    android:id="@+id/logistics"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentEnd="true"
+                    android:drawableTop="@drawable/ic_logistics"
+                    android:layout_marginVertical="10dp"
+                    android:background="#00FFFFFF"
+                    android:text="物流查询"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    />
             </RelativeLayout>
 
         </ScrollView>

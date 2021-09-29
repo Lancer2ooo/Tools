@@ -21,8 +21,10 @@ import android.view.Window;
 import android.view.WindowInsets;
 import android.view.WindowInsetsController;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
+import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
@@ -50,11 +52,15 @@ import java.util.TimerTask;
  * version: 1.0
  */
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
     ImageView imageView;
     LinearLayout linearLayout;
     FloatingActionButton floatingActionButton;
+
+    Button button_calculator;
+    Button button_color;
+    Button button_logistics;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -81,6 +87,7 @@ public class MainActivity extends AppCompatActivity {
         imageView = findViewById(R.id.back_img);
         sendRequestWithHttpURLConnection();
 
+        //设置时间布局的点击事件
         linearLayout = findViewById(R.id.top_clock);
         linearLayout.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -91,6 +98,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+        //给悬浮按钮设置点击事件
         floatingActionButton = findViewById(R.id.float_button);
         floatingActionButton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -98,6 +106,8 @@ public class MainActivity extends AppCompatActivity {
                 showNoticeDialog("作者：Lancer \n\nGithub：\n\nhttps://github.com/Lancer2ooo/Tools \n\n欢迎访问",MainActivity.this);
             }
         });
+
+        allItemController();
     }
 
     private void sendRequestWithHttpURLConnection() {
@@ -165,7 +175,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void run() {
 
-                //毛玻璃效果（内存溢出bug）
+                //毛玻璃效果
                 MultiTransformation multiTransformation = new MultiTransformation(
                         new BlurTransformation(MainActivity.this,10)
                 );
@@ -195,5 +205,30 @@ public class MainActivity extends AppCompatActivity {
         });
         Dialog noticeDialog = builder.create();
         noticeDialog.show();
+    }
+
+    public void allItemController() {
+        button_calculator = findViewById(R.id.calculator);
+        button_color = findViewById(R.id.color);
+        button_logistics = findViewById(R.id.logistics);
+
+        button_calculator.setOnClickListener(this);
+        button_color.setOnClickListener(this);
+        button_logistics.setOnClickListener(this);
+    }
+
+    @Override
+    public void onClick(View view) {
+        switch (view.getId()){
+            case R.id.calculator:
+                Toast.makeText(MainActivity.this,"complete_calculator",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.color:
+                Toast.makeText(MainActivity.this,"complete_color",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.logistics:
+                Toast.makeText(MainActivity.this,"complete_logistics",Toast.LENGTH_LONG).show();
+                break;
+        }
     }
 }
