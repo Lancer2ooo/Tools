@@ -14,12 +14,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tools">
-        <activity android:name=".activity.FullScreenClockActivity"
+        <activity android:name=".activity.CalculatorActivity"></activity>
+
+        <uses-library
+            android:name="org.apache.http.legacy"
+            android:required="false" />
+
+        <activity android:name=".activity.LogisticsActivity"></activity>
+        <activity
+            android:name=".activity.FullScreenClockActivity"
             android:screenOrientation="landscape"
-            android:theme="@style/ImageTranslucentTheme"
-            >
-        </activity>
-        <activity android:name=".activity.MainActivity"
+            android:theme="@style/ImageTranslucentTheme"></activity>
+        <activity
+            android:name=".activity.MainActivity"
             android:theme="@style/ImageTranslucentTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

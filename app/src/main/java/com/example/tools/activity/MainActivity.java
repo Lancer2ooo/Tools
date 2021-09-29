@@ -62,6 +62,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button button_calculator;
     Button button_color;
     Button button_logistics;
+    Button button_translate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -212,10 +213,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_calculator = findViewById(R.id.calculator);
         button_color = findViewById(R.id.color);
         button_logistics = findViewById(R.id.logistics);
+        button_translate = findViewById(R.id.translate);
 
         button_calculator.setOnClickListener(this);
         button_color.setOnClickListener(this);
         button_logistics.setOnClickListener(this);
+        button_translate.setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -223,13 +226,22 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View view) {
         switch (view.getId()){
             case R.id.calculator:
-                Toast.makeText(MainActivity.this,"complete_calculator",Toast.LENGTH_LONG).show();
+                Intent intent_to_calculator = new Intent(MainActivity.this,CalculatorActivity.class);
+                startActivity(intent_to_calculator);
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                // Toast.makeText(MainActivity.this,"complete_calculator",Toast.LENGTH_LONG).show();
                 break;
             case R.id.color:
                 Toast.makeText(MainActivity.this,"complete_color",Toast.LENGTH_LONG).show();
                 break;
             case R.id.logistics:
-                Toast.makeText(MainActivity.this,"complete_logistics",Toast.LENGTH_LONG).show();
+                Intent intent_to_logistics = new Intent(MainActivity.this,LogisticsActivity.class);
+                startActivity(intent_to_logistics);
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+//                Toast.makeText(MainActivity.this,"complete_logistics",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.translate:
+                Toast.makeText(MainActivity.this,"complete_translate",Toast.LENGTH_LONG).show();
                 break;
         }
     }

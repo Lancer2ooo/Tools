@@ -61,6 +61,7 @@
             android:background="#4DC1C1C1">
 
             <RelativeLayout
+                android:id="@+id/line_1"
                 android:layout_marginHorizontal="20dp"
                 android:layout_marginTop="20dp"
                 android:layout_width="match_parent"
@@ -104,9 +105,23 @@
                     android:textColor="@color/white"
                     android:textSize="16sp"
                     />
+
+                <Button
+                    android:id="@+id/translate"
+                    android:layout_below="@+id/calculator"
+                    android:layout_marginVertical="10dp"
+                    android:background="#00FFFFFF"
+                    android:drawableTop="@drawable/ic_translate"
+                    android:text="翻译"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
             </RelativeLayout>
 
+
         </ScrollView>
+
     </RelativeLayout>
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton

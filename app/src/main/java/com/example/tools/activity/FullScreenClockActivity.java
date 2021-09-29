@@ -33,6 +33,7 @@ import java.net.URL;
  * date   : 2020/9/27
  * desc   :
  * version: 1.0
+ * 全屏时钟
  */
 
 public class FullScreenClockActivity extends AppCompatActivity {
