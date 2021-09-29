@@ -1,9 +1,13 @@
 package com.example.tools.activity;
 
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.WindowInsetsControllerCompat;
 
 import android.app.Activity;
+import android.app.Dialog;
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.ApplicationInfo;
 import android.content.pm.PackageManager;
@@ -24,6 +28,7 @@ import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
 import com.example.tools.R;
 import com.example.tools.widget.BlurTransformation;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONArray;
 import org.json.JSONObject;
@@ -49,6 +54,7 @@ public class MainActivity extends AppCompatActivity {
 
     ImageView imageView;
     LinearLayout linearLayout;
+    FloatingActionButton floatingActionButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -82,6 +88,14 @@ public class MainActivity extends AppCompatActivity {
 //                Toast.makeText(MainActivity.this,"complete",Toast.LENGTH_LONG).show();
                 Intent intent_to_full = new Intent(MainActivity.this,FullScreenClockActivity.class);
                 startActivity(intent_to_full);
+            }
+        });
+
+        floatingActionButton = findViewById(R.id.float_button);
+        floatingActionButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                showNoticeDialog("作者：Lancer \n\nGithub：\n\nhttps://github.com/Lancer2ooo/Tools \n\n欢迎访问",MainActivity.this);
             }
         });
     }
@@ -165,5 +179,21 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    //设置弹窗
+    public void showNoticeDialog(String data, Context mContext) {
+        // 构造对话框
+        AlertDialog.Builder builder = new AlertDialog.Builder(mContext);
+        builder.setTitle("关于");
+        builder.setMessage(data);
+        builder.setPositiveButton("返回", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialog, int which) {
+                dialog.dismiss();
+            }
+        });
+        Dialog noticeDialog = builder.create();
+        noticeDialog.show();
     }
 }
