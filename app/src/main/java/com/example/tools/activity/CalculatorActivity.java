@@ -23,6 +23,14 @@ import android.widget.TextView;
 import com.example.tools.R;
 import com.example.tools.widget.InputItem;
 
+
+/**
+ * author : Lancer
+ * e-mail : lancer2ooo@qq.com
+ * version: 1.0
+ * 计算器
+ */
+
 public class CalculatorActivity extends Activity implements OnClickListener{
 
     private TextView mShowResultTv;  //显示结果

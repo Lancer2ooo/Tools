@@ -30,8 +30,6 @@ import java.net.URL;
 /**
  * author : Lancer
  * e-mail : lancer2ooo@qq.com
- * date   : 2020/9/27
- * desc   :
  * version: 1.0
  * 全屏时钟
  */

@@ -39,9 +39,10 @@ import okhttp3.Request;
 import okhttp3.Response;
 
 /**
+ * author : Lancer
+ * e-mail : lancer2ooo@qq.com
+ * version: 1.0
  * 在线翻译
- *
- * @author llw
  */
 public class TranslateActivity extends AppCompatActivity implements View.OnClickListener {
 
@@ -362,10 +363,7 @@ public class TranslateActivity extends AppCompatActivity implements View.OnClick
 
         try {
             hash = MessageDigest.getInstance("MD5").digest(string.getBytes("UTF-8"));
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-            return null;
-        } catch (UnsupportedEncodingException e) {
+        } catch (NoSuchAlgorithmException | UnsupportedEncodingException e) {
             e.printStackTrace();
             return null;
         }

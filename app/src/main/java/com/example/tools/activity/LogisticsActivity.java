@@ -28,8 +28,6 @@ import java.util.HashMap;
 /**
  * author : Lancer
  * e-mail : lancer2ooo@qq.com
- * date   : 2021/9/28
- * desc   :
  * version: 1.0
  * 物流查询
  */
