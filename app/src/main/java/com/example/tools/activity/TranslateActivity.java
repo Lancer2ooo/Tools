@@ -22,7 +22,6 @@ import com.google.gson.Gson;
 
 import org.angmarch.views.NiceSpinner;
 import org.angmarch.views.OnSpinnerItemSelectedListener;
-import org.json.JSONObject;
 
 import java.io.IOException;
 import java.io.UnsupportedEncodingException;
@@ -323,7 +322,6 @@ public class TranslateActivity extends AppCompatActivity implements View.OnClick
                 } else {//正常返回
                     //通过Gson 将 JSON字符串转为实体Bean
                     final TranslateResult result = new Gson().fromJson(object.toString(), TranslateResult.class);
-                    tvTranslation.setVisibility(View.GONE);
                     //显示翻译的结果
 
                     if(result.getTrans_result().get(0).getDst() == null){
