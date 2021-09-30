@@ -47,6 +47,15 @@ dependencies {
     implementation 'com.mcxiaoke.volley:library:1.0.19'
     implementation 'com.google.code.gson:gson:2.8.6'
 
+    //下拉框
+    implementation 'com.github.arcadefire:nice-spinner:1.4.3'
+    //网络访问
+    implementation 'com.squareup.okhttp3:okhttp:3.12.3'
+    //卡片视图
+    implementation 'androidx.cardview:cardview:1.0.0'
+    //GSON解析
+    implementation 'com.squareup.retrofit2:converter-gson:2.6.0'
+
     implementation 'androidx.appcompat:appcompat:1.2.0'
     implementation 'com.google.android.material:material:1.3.0'
     implementation 'androidx.constraintlayout:constraintlayout:2.0.4'

@@ -241,7 +241,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 //                Toast.makeText(MainActivity.this,"complete_logistics",Toast.LENGTH_LONG).show();
                 break;
             case R.id.translate:
-                Toast.makeText(MainActivity.this,"complete_translate",Toast.LENGTH_LONG).show();
+                Intent intent_to_translate = new Intent(MainActivity.this,TranslateActivity.class);
+                startActivity(intent_to_translate);
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 break;
         }
     }
