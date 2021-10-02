@@ -58,7 +58,6 @@
                         android:layout_height="48dp"
                         app:arrowTint="#000"
                         app:textTint="#000" />
-
                 </LinearLayout>
 
                 <!--翻译后显示的布局-->
@@ -82,7 +81,7 @@
                             android:id="@+id/tv_from"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@drawable/stroke_black_radus"
+                            android:background="@drawable/stroke_black_radius"
                             android:gravity="center"
                             android:textColor="#000"
                             android:textSize="14sp" />
@@ -107,7 +106,7 @@
                             android:id="@+id/tv_to"
                             android:layout_width="match_parent"
                             android:layout_height="40dp"
-                            android:background="@drawable/stroke_black_radus"
+                            android:background="@drawable/stroke_black_radius"
                             android:gravity="center"
                             android:textColor="#000"
                             android:textSize="14sp" />
@@ -210,7 +209,7 @@
                         android:id="@+id/tv_translation"
                         android:layout_width="match_parent"
                         android:layout_height="48dp"
-                        android:background="@drawable/stroke_black_radus"
+                        android:background="@drawable/stroke_black_radius"
                         android:foreground="?android:attr/selectableItemBackground"
                         android:gravity="center"
                         android:padding="10dp"

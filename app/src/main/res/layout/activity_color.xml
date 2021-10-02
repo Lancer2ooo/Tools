@@ -1,99 +1,192 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/AllBackColor"
     tools:context=".activity.ColorActivity"
-    android:padding="12dip"
-    android:background="@color/AllBackColor">
+    android:padding="12dip">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/color_tv"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        style="@style/Button3Style"
-        >
-        <TextView
-            android:layout_width="wrap_content"
+    <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/color_tv"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:textSize="22sp"
-            android:gravity="center"
-            android:layout_centerHorizontal="true"
-            android:text="颜色转换"
-            android:textColor="@color/black"
-            android:layout_gravity="center"/>
-    </androidx.appcompat.widget.Toolbar>
+            style="@style/Button3Style"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textSize="22sp"
+                android:gravity="center"
+                android:layout_centerHorizontal="true"
+                android:text="颜色转换"
+                android:textColor="@color/black"
+                android:layout_gravity="center"/>
+        </androidx.appcompat.widget.Toolbar>
 
-    <RelativeLayout
-        android:id="@+id/ed_1"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/color_tv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="#FFFFFF">
-
-        <EditText
-            android:id="@+id/ed_colorRGB"
+        <!--滚动视图 当内容高度超出屏幕高度时可以上下滚动-->
+        <ScrollView
+            android:layout_below="@+id/color_tv"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/stroke_gray"
-            android:gravity="top"
-            android:hint="请输入RGB值"
-            android:maxLength="6000"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="30dp"
-            android:paddingBottom="10dp"
-            android:textColor="#000"
-            android:textColorLink="#ABABAB"
-            android:textCursorDrawable="@drawable/cursor_style" />
-    </RelativeLayout>
+            android:layout_height="match_parent"
+            android:overScrollMode="never">
 
-    <RelativeLayout
-        android:id="@+id/ed_2"
-        android:layout_marginTop="20dp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ed_1"
-        android:background="#FFFFFF">
+            <!--主要操作区域-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="20dp">
+
+                <LinearLayout
+                    android:id="@+id/color_before_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:visibility="gone">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:layout_marginLeft="10dp"
+                        android:layout_marginRight="10dp"
+                        android:src="@drawable/ic_change" />
+
+                </LinearLayout>
+
+
+                <org.angmarch.views.NiceSpinner
+                    android:id="@+id/sp_colorType"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    app:arrowTint="#000"
+                    app:textTint="#000" />
+
+                <!--十六进制toRGB布局内容输入区域-->
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:layout_marginTop="20dp"
+                    android:background="#FFF">
+
+                    <!--输入框-->
+                    <EditText
+                        android:id="@+id/ed_color_content"
+                        android:layout_width="match_parent"
+                        android:layout_height="150dp"
+                        android:background="@drawable/stroke_gray"
+                        android:gravity="top"
+                        android:hint="请输入要转换的颜色十六进制 \n如：#FFB6C1"
+                        android:maxLength="6000"
+                        android:paddingLeft="10dp"
+                        android:paddingTop="10dp"
+                        android:paddingRight="30dp"
+                        android:paddingBottom="10dp"
+                        android:textColor="#000"
+                        android:textColorLink="#ABABAB"
+                        android:textCursorDrawable="@drawable/cursor_style"/>
+
+                    <!--清空输入内容-->
+                    <ImageView
+                        android:id="@+id/iv_color_clear_tx"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
+                        android:layout_alignParentRight="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginRight="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:src="@drawable/ic_clear"
+                        android:visibility="gone" />
+                </RelativeLayout>
+
+
+                <!--转换后的结果显示-->
+                <LinearLayout
+                    android:visibility="gone"
+                    android:id="@+id/color_result_lay"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="转换结果"
+                        android:textColor="#000"
+                        android:textSize="14sp" />
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:background="#FFF"
+                        android:orientation="vertical">
+
+                        <!--显示转换的结果-->
+                        <TextView
+                            android:id="@+id/tv_color_result"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:padding="10dp"
+                            android:textColor="#000" />
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="right"
+                            android:orientation="horizontal">
+                            <!--复制转换出来的结果-->
+                            <ImageView
+                                android:id="@+id/iv_color_copy_tx"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:layout_marginRight="4dp"
+                                android:layout_marginBottom="4dp"
+                                android:padding="4dp"
+                                android:src="@drawable/ic_copy" />
+                        </LinearLayout>
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="20dp"
+                    android:background="#FFF"
+                    app:cardCornerRadius="5dp">
+
+                    <TextView
+                        android:id="@+id/tv_color"
+                        android:layout_width="match_parent"
+                        android:layout_height="48dp"
+                        android:background="@drawable/stroke_black_radius"
+                        android:foreground="?android:attr/selectableItemBackground"
+                        android:gravity="center"
+                        android:padding="10dp"
+                        android:text="转换"
+                        android:textColor="#000"
+                        android:textColorLink="#ABABAB"
+                        android:textSize="16sp"
+                        />
+                </androidx.cardview.widget.CardView>
+            </LinearLayout>
+        </ScrollView>
+
         <TextView
-            android:id="@+id/tv_color"
-            android:layout_width="match_parent"
-            android:layout_height="48dp"
-            android:background="@drawable/stroke_black_radus"
-            android:foreground="?android:attr/selectableItemBackground"
+            android:text="目前仅实现十六进制转换RGB"
+            android:layout_alignParentBottom="true"
             android:gravity="center"
-            android:padding="10dp"
-            android:text="转换"
-            android:textColor="#000"
-            android:textColorLink="#ABABAB"
-            android:textSize="16sp"
-            />
-    </RelativeLayout>
-
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ed_2"
-        android:layout_marginTop="20dp"
-        android:background="#FFFFFF"
-        >
-        <EditText
-            android:id="@+id/ed_ed_color16"
             android:layout_width="match_parent"
-            android:layout_height="150dp"
-            android:background="@drawable/stroke_gray"
-            android:gravity="top"
-            android:hint="请输入十六进制颜色码"
-            android:maxLength="6000"
-            android:paddingLeft="10dp"
-            android:paddingTop="10dp"
-            android:paddingRight="30dp"
-            android:paddingBottom="10dp"
-            android:textColor="#000"
-            android:textColorLink="#ABABAB"
-            android:textCursorDrawable="@drawable/cursor_style" />
+            android:layout_height="wrap_content"/>
     </RelativeLayout>
 
-</RelativeLayout>
+
+</LinearLayout>
