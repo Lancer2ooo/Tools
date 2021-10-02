@@ -15,7 +15,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.Tools">
-        <activity android:name=".activity.CompassActivity"></activity>
+        <activity android:name=".activity.CompassActivity"/>
         <activity android:name=".activity.SoundActivity" />
         <activity android:name=".activity.ColorActivity" />
         <activity android:name=".activity.TranslateActivity" />

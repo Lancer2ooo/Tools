@@ -66,6 +66,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button button_translate;
     Button button_soundDisc;
     Button button_compass;
+    Button button_codeScanner;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,18 +77,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_main);
 
-//        //设置应用全屏显示 沉浸式任务栏
-//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.R) {
-//            WindowInsetsController insetsController = getWindow().getInsetsController();
-//            if (insetsController != null) {
-//                getWindow().setStatusBarColor(Color.TRANSPARENT);
-//            }
-//        } else {
-//            getWindow().setFlags(
-//                    WindowManager.LayoutParams.FLAG_FULLSCREEN,
-//                    WindowManager.LayoutParams.FLAG_FULLSCREEN
-//            );
-//        }
+        //允许应用延申到刘海
+        if (Build.VERSION.SDK_INT >= 28) {
+            WindowManager.LayoutParams lp = getWindow().getAttributes();
+            lp.layoutInDisplayCutoutMode = WindowManager.LayoutParams.LAYOUT_IN_DISPLAY_CUTOUT_MODE_SHORT_EDGES;
+            getWindow().setAttributes(lp);
+        }
+
 
         imageView = findViewById(R.id.back_img);
         sendRequestWithHttpURLConnection();
@@ -219,6 +215,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_translate = findViewById(R.id.translate);
         button_soundDisc = findViewById(R.id.soundDisc);
         button_compass = findViewById(R.id.compass_btn);
+        button_codeScanner = findViewById(R.id.codeScanner);
 
 
         button_calculator.setOnClickListener(this);
@@ -227,6 +224,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_translate.setOnClickListener(this);
         button_soundDisc.setOnClickListener(this);
         button_compass.setOnClickListener(this);
+        button_codeScanner.setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -266,6 +264,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 Intent intent_to_compass = new Intent(MainActivity.this, CompassActivity.class);
                 startActivity(intent_to_compass);
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                break;
+            case R.id.codeScanner:
+                Toast.makeText(MainActivity.this,"功能正在开发中",Toast.LENGTH_LONG).show();
                 break;
         }
     }

@@ -45,6 +45,7 @@ public class FullScreenClockActivity extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN);
         setContentView(R.layout.activity_full_screen_clock);
+
         imageView = findViewById(R.id.fullscreen_back_img);
         sendRequestWithHttpURLConnection();
     }

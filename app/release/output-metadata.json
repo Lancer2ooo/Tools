@@ -11,8 +11,8 @@
       "type": "SINGLE",
       "filters": [],
       "versionCode": 1,
-      "versionName": "1.0.0",
-      "outputFile": "Tools.apk"
+      "versionName": "1.0.1",
+      "outputFile": "Tools-1.0.1.apk"
     }
   ]
 }

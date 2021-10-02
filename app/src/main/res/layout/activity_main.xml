@@ -146,6 +146,20 @@
                     android:textSize="16sp"
                     />
 
+                <Button
+                    android:id="@+id/codeScanner"
+                    android:layout_below="@+id/translate"
+                    android:layout_marginVertical="10dp"
+                    android:background="#00FFFFFF"
+                    android:drawableTop="@drawable/ic_codescanner"
+                    android:text="条码识别"
+                    android:textColor="@color/white"
+                    android:textSize="16sp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"/>
+
+
+
             </RelativeLayout>
 
 
