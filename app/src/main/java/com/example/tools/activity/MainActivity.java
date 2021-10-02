@@ -30,6 +30,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.MultiTransformation;
 import com.example.tools.R;
+import com.example.tools.customview.CompassView;
 import com.example.tools.widget.BlurTransformation;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -63,6 +64,8 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     Button button_color;
     Button button_logistics;
     Button button_translate;
+    Button button_soundDisc;
+    Button button_compass;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -214,11 +217,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         button_color = findViewById(R.id.color);
         button_logistics = findViewById(R.id.logistics);
         button_translate = findViewById(R.id.translate);
+        button_soundDisc = findViewById(R.id.soundDisc);
+        button_compass = findViewById(R.id.compass_btn);
+
 
         button_calculator.setOnClickListener(this);
         button_color.setOnClickListener(this);
         button_logistics.setOnClickListener(this);
         button_translate.setOnClickListener(this);
+        button_soundDisc.setOnClickListener(this);
+        button_compass.setOnClickListener(this);
     }
 
     @SuppressLint("NonConstantResourceId")
@@ -232,7 +240,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 // Toast.makeText(MainActivity.this,"complete_calculator",Toast.LENGTH_LONG).show();
                 break;
             case R.id.color:
-                Toast.makeText(MainActivity.this,"complete_color",Toast.LENGTH_LONG).show();
+                Intent intent_to_color = new Intent(MainActivity.this,ColorActivity.class);
+                startActivity(intent_to_color);
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+//                Toast.makeText(MainActivity.this,"功能正在开发中",Toast.LENGTH_LONG).show();
                 break;
             case R.id.logistics:
                 Intent intent_to_logistics = new Intent(MainActivity.this,LogisticsActivity.class);
@@ -243,6 +254,17 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.translate:
                 Intent intent_to_translate = new Intent(MainActivity.this,TranslateActivity.class);
                 startActivity(intent_to_translate);
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+                break;
+            case R.id.soundDisc:
+                Intent intent_to_soundDisc = new Intent(MainActivity.this,SoundActivity.class);
+                startActivity(intent_to_soundDisc);
+                overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
+//                Toast.makeText(MainActivity.this,"功能正在开发中",Toast.LENGTH_LONG).show();
+                break;
+            case R.id.compass_btn:
+                Intent intent_to_compass = new Intent(MainActivity.this, CompassActivity.class);
+                startActivity(intent_to_compass);
                 overridePendingTransition(android.R.anim.fade_in,android.R.anim.fade_out);
                 break;
         }

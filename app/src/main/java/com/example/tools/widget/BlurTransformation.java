@@ -19,14 +19,6 @@ import java.security.MessageDigest;
 import jp.wasabeef.glide.transformations.internal.FastBlur;
 import jp.wasabeef.glide.transformations.internal.RSBlur;
 
-/**
- * author : Lancer
- * e-mail : lancer2ooo@qq.com
- * date   : 2020/9/27
- * desc   :
- * version: 1.0
- */
-
 public class BlurTransformation extends BitmapTransformation {
 
     private static String STRING_CHARSET_NAME = "UTF-8";

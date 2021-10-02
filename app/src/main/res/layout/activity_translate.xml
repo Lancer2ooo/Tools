@@ -135,7 +135,7 @@
                         android:paddingBottom="10dp"
                         android:textColor="#000"
                         android:textColorLink="#ABABAB"
-                        android:textCursorDrawable="@drawable/cursor_style" />
+                        android:textCursorDrawable="@drawable/cursor_style"/>
                     <!--清空输入内容-->
                     <ImageView
                         android:id="@+id/iv_clear_tx"
