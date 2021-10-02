@@ -49,8 +49,6 @@ import java.util.TimerTask;
 /**
  * author : Lancer
  * e-mail : lancer2ooo@qq.com
- * date   : 2021/9/27
- * desc   :
  * version: 1.0
  */
 

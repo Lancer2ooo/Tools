@@ -13,6 +13,13 @@ import android.view.WindowManager;
 import com.example.tools.R;
 import com.example.tools.customview.CompassView;
 
+/**
+ * author : Lancer
+ * e-mail : lancer2ooo@qq.com
+ * version: 1.0
+ * 指南针
+ */
+
 public class CompassActivity extends AppCompatActivity {
 
     private SensorManager sensorManager;
